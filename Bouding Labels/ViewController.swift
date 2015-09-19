@@ -39,9 +39,12 @@ class ViewController: UIViewController {
         iPhoneLabel.center = CGPoint(x: 200, y: 90)
         view.addSubview(iPhoneLabel)
         
+        iPhoneLabel.alpha = 0
+        
         UIView.animateWithDuration(2.0, delay: 1.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: nil, animations: {
             
             self.iPhoneLabel.center = CGPoint(x: 200, y: 90 + 200)
+            self.iPhoneLabel.alpha = 1
             
         }, completion: nil)
     }

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //create ivars
     var myFirstLabel: UILabel!
     var iPhoneLabel: UILabel!
+    var slideLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         // Create the labels
         myFirstLabel = UILabel()
         iPhoneLabel = UILabel()
+        slideLabel = UILabel()
         
         addLabels()
         
@@ -59,6 +61,18 @@ class ViewController: UIViewController {
             self.iPhoneLabel.alpha = 1
             
             }, completion: nil)
+        
+        slideLabel.text = "Hello"
+        slideLabel.font = UIFont.systemFontOfSize(36)
+        slideLabel.sizeToFit()
+        slideLabel.center = CGPoint(x: 800, y: 150)
+        view.addSubview(slideLabel)
+        
+        UIView.animateWithDuration(1.5, delay: 1.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: nil, animations: {
+            
+            self.slideLabel.center = CGPoint(x: 150, y: 150)
+            
+        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

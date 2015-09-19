@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         myFirstLabel.text = "My first"
         myFirstLabel.font = UIFont.systemFontOfSize(36)
         myFirstLabel.sizeToFit()
+        myFirstLabel.center = CGPoint(x: 100, y: 40)
         
         view.addSubview(myFirstLabel)
     }

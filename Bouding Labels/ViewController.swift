@@ -47,6 +47,13 @@ class ViewController: UIViewController {
             self.iPhoneLabel.alpha = 1
             
         }, completion: nil)
+        
+        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func handleTapGesture(tapGesture: UITapGestureRecognizer) {
+        println("tap")
     }
 
     override func didReceiveMemoryWarning() {

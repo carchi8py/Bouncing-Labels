@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         myFirstLabel = UILabel()
         iPhoneLabel = UILabel()
         
+        addLabels()
+        
         var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
         view.addGestureRecognizer(tapGesture)
     }

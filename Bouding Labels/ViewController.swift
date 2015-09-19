@@ -24,8 +24,14 @@ class ViewController: UIViewController {
         myFirstLabel.font = UIFont.systemFontOfSize(36)
         myFirstLabel.sizeToFit()
         myFirstLabel.center = CGPoint(x: 100, y: 40)
-        
         view.addSubview(myFirstLabel)
+        
+        iPhoneLabel = UILabel()
+        iPhoneLabel.text = "iPhone app"
+        iPhoneLabel.font = UIFont.boldSystemFontOfSize(48)
+        iPhoneLabel.sizeToFit()
+        iPhoneLabel.center = CGPoint(x: 200, y: 90)
+        view.addSubview(iPhoneLabel)
     }
 
     override func didReceiveMemoryWarning() {

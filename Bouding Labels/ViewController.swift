@@ -20,19 +20,29 @@ class ViewController: UIViewController {
         
         // Create the labels
         myFirstLabel = UILabel()
+        iPhoneLabel = UILabel()
+        
+        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func handleTapGesture(tapGesture: UITapGestureRecognizer) {
+        addLabels()
+    }
+    
+    func addLabels() {
         myFirstLabel.text = "My first"
         myFirstLabel.font = UIFont.systemFontOfSize(36)
         myFirstLabel.sizeToFit()
         myFirstLabel.center = CGPoint(x: 100, y: 40)
         view.addSubview(myFirstLabel)
         
-        UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: nil, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: nil, animations: {
             
             self.myFirstLabel.center = CGPoint(x: 100, y: 40+200)
             
-        }, completion: nil)
+            }, completion: nil)
         
-        iPhoneLabel = UILabel()
         iPhoneLabel.text = "iPhone app"
         iPhoneLabel.font = UIFont.boldSystemFontOfSize(48)
         iPhoneLabel.sizeToFit()
@@ -41,19 +51,12 @@ class ViewController: UIViewController {
         
         iPhoneLabel.alpha = 0
         
-        UIView.animateWithDuration(2.0, delay: 1.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: nil, animations: {
+        UIView.animateWithDuration(2.0, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: nil, animations: {
             
             self.iPhoneLabel.center = CGPoint(x: 200, y: 90 + 200)
             self.iPhoneLabel.alpha = 1
             
-        }, completion: nil)
-        
-        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    func handleTapGesture(tapGesture: UITapGestureRecognizer) {
-        println("tap")
+            }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

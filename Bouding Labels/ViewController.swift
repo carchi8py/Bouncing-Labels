@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         myFirstLabel.center = CGPoint(x: 100, y: 40)
         view.addSubview(myFirstLabel)
         
-        UIView.animateWithDuration(0.5, delay: 1.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: nil, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: nil, animations: {
             
             self.myFirstLabel.center = CGPoint(x: 100, y: 40+200)
             
@@ -38,6 +38,12 @@ class ViewController: UIViewController {
         iPhoneLabel.sizeToFit()
         iPhoneLabel.center = CGPoint(x: 200, y: 90)
         view.addSubview(iPhoneLabel)
+        
+        UIView.animateWithDuration(2.0, delay: 1.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: nil, animations: {
+            
+            self.iPhoneLabel.center = CGPoint(x: 200, y: 90 + 200)
+            
+        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

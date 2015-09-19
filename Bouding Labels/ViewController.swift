@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         myFirstLabel.center = CGPoint(x: 100, y: 40)
         view.addSubview(myFirstLabel)
         
+        UIView.animateWithDuration(0.5, delay: 1.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: nil, animations: {
+            
+            self.myFirstLabel.center = CGPoint(x: 100, y: 40+200)
+            
+        }, completion: nil)
+        
         iPhoneLabel = UILabel()
         iPhoneLabel.text = "iPhone app"
         iPhoneLabel.font = UIFont.boldSystemFontOfSize(48)
